@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
+import '../models/expense.dart';
+
 final formatter = DateFormat.yMd();
 
 class NewExpense extends StatefulWidget {
@@ -14,6 +16,7 @@ class _NewExpenseState extends State<NewExpense> {
   final _titileContoller = TextEditingController();
   final _amountContoller = TextEditingController();
   DateTime? _selectedDate;
+  Category _selectedCategory = Category.leisure;
 
   @override
   void dispose() {
@@ -100,8 +103,41 @@ class _NewExpenseState extends State<NewExpense> {
               )
             ],
           ),
+          const SizedBox(height: 16),
           Row(
             children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 12),
+                child: DropdownButtonHideUnderline(
+                  child: DropdownButton(
+                    iconEnabledColor: Theme.of(context).colorScheme.primary,
+                    icon: const Icon(Icons.keyboard_arrow_down_rounded),
+                    style: TextStyle(
+                      color: Theme.of(context).colorScheme.primary,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    value: _selectedCategory,
+                    items: Category.values
+                        .map(
+                          (category) => DropdownMenuItem(
+                            value: category,
+                            child: Text(
+                              category.name.toUpperCase(),
+                            ),
+                          ),
+                        )
+                        .toList(),
+                    onChanged: (value) {
+                      setState(() {
+                        if (value == null) return;
+                        _selectedCategory = value;
+                      });
+                    },
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
+              ),
+              const Spacer(),
               TextButton(
                 onPressed: () {
                   Navigator.pop(context);
