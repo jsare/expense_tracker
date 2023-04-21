@@ -1,17 +1,17 @@
-# expense_tracker
+# Expense Tracker
 
-A new Flutter project.
+Expense Tracker is a simple expense tracking application developed using Flutter. It is a single-screen interface where the user can see a graphical representation of expenses by category in the form of a bar chart, as well as a list of all expenses. The user can add and remove expenses.
 
-## Getting Started
+## Main functions
 
-This project is a starting point for a Flutter application.
++ Graphical representation of expenses by category in the form of a bar chart.
++ A list of all expenses with the ability to edit and delete.
++ Adding new expenses via a pop-up window (modal Bottom Sheet) with fields for entering the header, expense amount, date selection and expense category.
++ The ability to cancel the creation of the expense using the "Cancel" button or save the expense using the "Save Expense" button.
++ Adaptive interface that automatically adapts to portrait and horizontal screen mode.
 
-A few resources to get you started if this is your first Flutter project:
+## Technologies used
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# expense_tracker
++ Flutter - mobile application development framework
++ Dart is a programming language for creating applications on Flutter
++ Material Design - Standard visual interface design for Flutter applications
