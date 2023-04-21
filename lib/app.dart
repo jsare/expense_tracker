@@ -32,6 +32,16 @@ class ExpenseTracker extends StatelessWidget {
             foregroundColor: kDarkColorScheme.onPrimaryContainer,
           ),
         ),
+        textTheme: ThemeData().textTheme.copyWith(
+              titleLarge: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: kDarkColorScheme.onSecondaryContainer,
+                fontSize: 16,
+              ),
+              labelLarge: TextStyle(
+                color: kDarkColorScheme.onSurfaceVariant,
+              ),
+            ),
       ),
       theme: ThemeData().copyWith(
         useMaterial3: true,
@@ -57,6 +67,9 @@ class ExpenseTracker extends StatelessWidget {
                 fontWeight: FontWeight.bold,
                 color: kColorScheem.onSecondaryContainer,
                 fontSize: 16,
+              ),
+              labelLarge: TextStyle(
+                color: kColorScheem.onSurface,
               ),
             ),
       ),
