@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 
 import 'widgets/expenses_list/expenses_list.dart';
 import 'models/expense.dart';
+import 'widgets/chart/chart.dart';
+import 'widgets/chart/chart_bar.dart';
 
 class ExpenseScreen extends StatefulWidget {
   const ExpenseScreen({super.key});
@@ -93,7 +95,7 @@ class _ExpenseScreenState extends State<ExpenseScreen> {
       ),
       body: Column(
         children: [
-          const Text('The chart'),
+          Chart(expenses: _registeredExpenses),
           Expanded(
             child: mainContent,
           ),
